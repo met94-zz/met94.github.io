@@ -445,3 +445,7 @@ body {
 .fourofour {
   border: 1px solid $primary-color !important;
 }
+
+/* Added by Alanik */
+a[data-lightbox] + em { display: block; text-align: center;}
+/* END Added by Alanik */
