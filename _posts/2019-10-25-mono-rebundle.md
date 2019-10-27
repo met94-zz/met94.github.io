@@ -22,7 +22,7 @@ The post will mainly focus on how to bundle assemblies back into a native librar
 First off in order to get access to native libraries, an apk has to get unpacked.
 This can be done using any Zip decompression tool though I use apktool https://ibotpeaches.github.io/Apktool/ myself.
 After decompressing native libraries can be found inside /libs/[ABI]/ directory.
-<a href="/img/posts/mono-rebundle/apk_unzipped_libs.png" data-lightbox="img2">
+<a href="/img/posts/mono-rebundle/apk_unzipped_libs.png" data-lightbox="img1">
 	![alt text](/img/posts/mono-rebundle/apk_unzipped_libs.png "Unzipped APK")
 </a>
 *Decompressed APK*
@@ -35,7 +35,7 @@ I personally use this one https://github.com/tjg1/mono_unbundle and can recommen
 Installation is quick and requires Python >= 3.5 and Pipenv.<br/>
 The assemblies will most likely lose their original name, so you will need to fix it manually.
 
-<a href="/img/posts/mono-rebundle/extracted_dlls.png" data-lightbox="img3">
+<a href="/img/posts/mono-rebundle/extracted_dlls.png" data-lightbox="img1">
 	![alt text](/img/posts/mono-rebundle/extracted_dlls.png "Rename DLLs")
 </a>
 *Extracted assemblies before and after rename*
@@ -45,7 +45,7 @@ The assemblies will most likely lose their original name, so you will need to fi
 Having the assemblies extracted, any .NET assembly editor can be used from this point. I will be using dnSpy https://github.com/0xd4d/dnSpy.<br/>
 Go to File -> Open, select an assembly and voila there is its source code that we can perform static analyze on.
  
-<a href="/img/posts/mono-rebundle/dnSpy_opened_assembly.png" data-lightbox="img4">
+<a href="/img/posts/mono-rebundle/dnSpy_opened_assembly.png" data-lightbox="img1">
 	![alt text](/img/posts/mono-rebundle/dnSpy_opened_assembly.png "dnSpy")
 </a>
 *App1.dll opened in dnSpy*
@@ -57,14 +57,14 @@ Let's say we have a simple activity with a button and a text showing how many ti
 This is actually how the activity from the previous section works. <br/>
 We want to change the behavior so the clicks counter gets increased not by 1 but by 5 each click.
 
-<a href="/img/posts/mono-rebundle/dnSpy_edit_count1.png" data-lightbox="img5">
+<a href="/img/posts/mono-rebundle/dnSpy_edit_count1.png" data-lightbox="img1">
 	![alt text](/img/posts/mono-rebundle/dnSpy_edit_count1.png "Edit count")
 </a>
 *The button click event handler*
 
 There is an option called "Edit IL Instructions" in dnSpy that will allow you to edit the handler.
 
-<a href="/img/posts/mono-rebundle/dnSpy_edit_count2.gif" data-lightbox="img6">
+<a href="/img/posts/mono-rebundle/dnSpy_edit_count2.gif" data-lightbox="img1">
 	![alt text](/img/posts/mono-rebundle/dnSpy_edit_count2.gif "dnSpy edit IL")
 </a>
 *Modifying the handler*
