@@ -227,7 +227,7 @@ function addTohistory() {
       new Hammer(page).on('swipeleft', function(event) {
         addTohistory();
         {% if site.baseurl == "" and paginator.next_page_path == nil %}
-          document.location.replace("/");
+          //document.location.replace("/");
         {% else %}
           document.location.replace("{{site.baseurl}}{{paginator.next_page_path}}");
         {% endif %}
@@ -235,7 +235,7 @@ function addTohistory() {
       new Hammer(page).on('swiperight', function(event) {
         addTohistory();
         {% if site.baseurl == "" and paginator.previous_page_path == nil %}
-          document.location.replace("/");
+          //document.location.replace("/");
         {% else %}
           document.location.replace("{{site.baseurl}}{{paginator.previous_page_path}}");
         {% endif %}
