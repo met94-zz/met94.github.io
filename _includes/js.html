@@ -195,7 +195,7 @@ function addTohistory() {
       new Hammer(post).on('swipeleft', function(event) {
         addTohistory();
         {% if site.baseurl == "" and page.previous == nil %}
-          document.location.replace("/");
+          //document.location.replace("/");
         {% else %}
           document.location.replace("{{site.baseurl}}{{page.previous.url}}");
         {% endif %}
@@ -204,7 +204,7 @@ function addTohistory() {
       new Hammer(post).on('swiperight', function(event) {
         addTohistory();
         {% if site.baseurl == "" and page.next == nil %}
-          document.location.replace("/");
+          //document.location.replace("/");
         {% else %}
           document.location.replace("{{site.baseurl}}{{page.next.url}}");
         {% endif %}

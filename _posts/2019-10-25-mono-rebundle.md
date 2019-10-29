@@ -20,7 +20,7 @@ The post will mainly focus on how to bundle assemblies back into a native librar
 ## Unpack APK
 
 First off in order to get access to native libraries, an apk has to get unpacked.
-This can be done using any Zip decompression tool though I use apktool https://ibotpeaches.github.io/Apktool/ myself.
+This can be done using any Zip decompression tool though I use apktool <https://ibotpeaches.github.io/Apktool/> myself.
 After decompressing native libraries can be found inside /libs/[ABI]/ directory.
 <a href="/img/posts/mono-rebundle/apk_unzipped_libs.png" data-lightbox="img1">
 	![alt text](/img/posts/mono-rebundle/apk_unzipped_libs.png "Unzipped APK")
@@ -31,7 +31,7 @@ After decompressing native libraries can be found inside /libs/[ABI]/ directory.
 
 The file we are interested in is libmonodroid_bundle_app.so, this is where bundled assemblies are kept.
 There are currently available utilities to extract assemblies from a native library. 
-I personally use this one https://github.com/tjg1/mono_unbundle and can recommend it to you without hesitation.
+I personally use this one <https://github.com/tjg1/mono_unbundle> and can recommend it to you without hesitation.
 Installation is quick and requires Python >= 3.5 and Pipenv.<br/>
 The assemblies will most likely lose their original name, so you will need to fix it manually.
 
@@ -42,7 +42,7 @@ The assemblies will most likely lose their original name, so you will need to fi
 
 ## Analyze
 
-Having the assemblies extracted, any .NET assembly editor can be used from this point. I will be using dnSpy https://github.com/0xd4d/dnSpy.<br/>
+Having the assemblies extracted, any .NET assembly editor can be used from this point. I will be using dnSpy <https://github.com/0xd4d/dnSpy>.<br/>
 Go to File -> Open, select an assembly and voila there is its source code that we can perform static analyze on.
  
 <a href="/img/posts/mono-rebundle/dnSpy_opened_assembly.png" data-lightbox="img1">
@@ -75,7 +75,7 @@ Simple as that, don't forget to save the assembly (File -> Save Module).
 This is the moment we need to bundle the assemblies back to a native library.
 I couldn't find any utility to help me do it but I imagine a person with appropriate knowledge can achieve that with the mkbundle tool which is delivered with Mono.
 Anyway, I lack such knowledge but having in mind that Xamarin is open source and it bundles assemblies automatically for us, I was able to find the corresponding code and based on that create a bundling utility.
-The utility is available at GitHub repo https://github.com/met94/Mono-Rebundle. The repo contains information about how to use it, so go there for the details.
+The utility is available at GitHub repo <https://github.com/met94/Mono-Rebundle>. The repo contains information about how to use it, so go there for the details.
 
 The bundling process starts with generating a stub. Run the utility with the following command line parameters:
 <pre><code data-trim>
