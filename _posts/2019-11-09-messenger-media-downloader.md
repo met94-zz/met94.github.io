@@ -2,7 +2,7 @@
 layout: post
 section-type: post
 title: Downloading media from Facebook Messenger conversations
-category: reverse-engineering
+category: utilities
 tags: [ 'nodejs', 'typescript', 'facebook', 'messenger' ]
 ---
 
